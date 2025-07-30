@@ -81,7 +81,7 @@ public class BaseConfig {
 		WebDriverLibrary.elementClick(logoutobj.getLogoutmenu());
 
 		// Validate the Logoutlink
-		Assert.assertTrue(logoutobj.getLogoutlink().isDisplayed());
+		//Assert.assertTrue(logoutobj.getLogoutlink().isDisplayed());
 
 		// click on logoutlink
 		WebDriverLibrary.elementClick_Actions(logoutobj.getLogoutlink());

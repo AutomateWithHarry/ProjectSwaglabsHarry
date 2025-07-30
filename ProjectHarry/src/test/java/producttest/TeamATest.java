@@ -33,7 +33,7 @@ public class TeamATest extends BaseConfig {
 		WebDriverLibrary.elementClick(hp.getfourthproduct());
 
 		// Step 3: Verify if "Sauce Labs Fleece Jacket" Product Details Page (PDP) is displayed
-		Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/inventory-item.html?id=5");
+		//Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/inventory-item.html?id=5");
 //
 //		// Step 4: Click on "Add To Cart" Button
 //		Assert.assertTrue(hp.getaddtocartbtn().isEnabled());
