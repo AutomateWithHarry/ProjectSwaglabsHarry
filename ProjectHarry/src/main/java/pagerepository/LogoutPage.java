@@ -11,7 +11,7 @@ public class LogoutPage {
 	@FindBy(css = "#react-burger-menu-btn")
 	private WebElement logoutmenu;
 
-	@FindBy(css =   "#logout_sidebar_link")
+	@FindBy(xpath  =   "//a[text()='Logout']")
 	private WebElement logoutlink;
 
 	// Utilization

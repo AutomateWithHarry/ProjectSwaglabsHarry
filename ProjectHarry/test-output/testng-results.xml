@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
-    <line>
-      <![CDATA[Harry]]>
-    </line>
     <line>
       <![CDATA[Harry]]>
     </line>
@@ -14,12 +11,16 @@
       <![CDATA[ 567889]]>
     </line>
   </reporter-output>
-  <suite started-at="2025-07-28T09:42:36 IST" name="RegressionSuite" finished-at="2025-07-28T09:42:43 IST" duration-ms="6695">
+  <suite started-at="2025-07-31T11:04:23 IST" name="RegressionSuite" finished-at="2025-07-31T11:04:28 IST" duration-ms="5748">
     <groups>
     </groups>
-    <test started-at="2025-07-28T09:42:36 IST" name="Test" finished-at="2025-07-28T09:42:43 IST" duration-ms="6695">
+    <test started-at="2025-07-31T11:04:23 IST" name="Test" finished-at="2025-07-31T11:04:28 IST" duration-ms="5748">
       <class name="producttest.TeamATest">
-        <test-method is-config="true" signature="browserSetup(java.lang.String)[pri:0, instance:producttest.TeamATest@587e5365]" started-at="2025-07-28T09:42:36 IST" name="browserSetup" finished-at="2025-07-28T09:42:40 IST" duration-ms="3519" status="PASS">
+        <test-method is-config="true" signature="ReportSetup()[pri:0, instance:producttest.TeamATest@305b7c14]" started-at="2025-07-31T11:04:23 IST" name="ReportSetup" finished-at="2025-07-31T11:04:23 IST" duration-ms="234" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportSetup -->
+        <test-method is-config="true" signature="browserSetup(java.lang.String)[pri:0, instance:producttest.TeamATest@305b7c14]" started-at="2025-07-31T11:04:23 IST" name="browserSetup" finished-at="2025-07-31T11:04:25 IST" duration-ms="2111" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -30,11 +31,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserSetup -->
-        <test-method is-config="true" signature="login()[pri:0, instance:producttest.TeamATest@587e5365]" started-at="2025-07-28T09:42:41 IST" name="login" finished-at="2025-07-28T09:42:41 IST" duration-ms="478" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:producttest.TeamATest@305b7c14]" started-at="2025-07-31T11:04:26 IST" name="login" finished-at="2025-07-31T11:04:26 IST" duration-ms="393" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="Harry(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:producttest.TeamATest@587e5365]" started-at="2025-07-28T09:42:41 IST" name="Harry" data-provider="checkOutInfo" finished-at="2025-07-28T09:42:41 IST" duration-ms="15" status="PASS">
+        <test-method signature="VerifyPrd_1(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:producttest.TeamATest@305b7c14]" started-at="2025-07-31T11:04:26 IST" name="VerifyPrd_1" data-provider="checkOutInfo" finished-at="2025-07-31T11:04:26 IST" duration-ms="172" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -57,24 +58,49 @@
               <![CDATA[Harry]]>
             </line>
             <line>
-              <![CDATA[Harry]]>
-            </line>
-            <line>
               <![CDATA[Hari]]>
             </line>
             <line>
               <![CDATA[ 567889]]>
             </line>
           </reporter-output>
-        </test-method> <!-- Harry -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:producttest.TeamATest@587e5365]" started-at="2025-07-28T09:42:42 IST" name="logout" finished-at="2025-07-28T09:42:42 IST" duration-ms="642" status="PASS">
+        </test-method> <!-- VerifyPrd_1 -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:producttest.TeamATest@305b7c14]" started-at="2025-07-31T11:04:26 IST" name="logout" finished-at="2025-07-31T11:04:27 IST" duration-ms="317" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method is-config="true" signature="browserTerminate()[pri:0, instance:producttest.TeamATest@587e5365]" started-at="2025-07-28T09:42:42 IST" name="browserTerminate" finished-at="2025-07-28T09:42:43 IST" duration-ms="857" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:producttest.TeamATest@305b7c14]" started-at="2025-07-31T11:04:27 IST" name="login" finished-at="2025-07-31T11:04:27 IST" duration-ms="298" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="VerifyPrd_2()[pri:0, instance:producttest.TeamATest@305b7c14]" started-at="2025-07-31T11:04:27 IST" name="VerifyPrd_2" finished-at="2025-07-31T11:04:27 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPrd_2 -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:producttest.TeamATest@305b7c14]" started-at="2025-07-31T11:04:27 IST" name="logout" finished-at="2025-07-31T11:04:27 IST" duration-ms="248" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="login()[pri:0, instance:producttest.TeamATest@305b7c14]" started-at="2025-07-31T11:04:27 IST" name="login" finished-at="2025-07-31T11:04:27 IST" duration-ms="257" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="VerifyPrd_3()[pri:0, instance:producttest.TeamATest@305b7c14]" started-at="2025-07-31T11:04:27 IST" name="VerifyPrd_3" finished-at="2025-07-31T11:04:27 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyPrd_3 -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:producttest.TeamATest@305b7c14]" started-at="2025-07-31T11:04:27 IST" name="logout" finished-at="2025-07-31T11:04:28 IST" duration-ms="242" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="browserTerminate()[pri:0, instance:producttest.TeamATest@305b7c14]" started-at="2025-07-31T11:04:28 IST" name="browserTerminate" finished-at="2025-07-31T11:04:28 IST" duration-ms="267" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserTerminate -->
+        <test-method is-config="true" signature="ReportTerminate()[pri:0, instance:producttest.TeamATest@305b7c14]" started-at="2025-07-31T11:04:28 IST" name="ReportTerminate" finished-at="2025-07-31T11:04:28 IST" duration-ms="356" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportTerminate -->
       </class> <!-- producttest.TeamATest -->
     </test> <!-- Test -->
   </suite> <!-- RegressionSuite -->

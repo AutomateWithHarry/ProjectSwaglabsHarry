@@ -4,6 +4,9 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 import genericlibrary.BaseConfig;
 import genericlibrary.WebDriverLibrary;
 import pagerepository.CartPage;
@@ -14,14 +17,22 @@ import pagerepository.HomePage;
 public class TeamATest extends BaseConfig {
 
 	@Test(dataProvider = "checkOutInfo")
-	public void Harry(String firstname,String lastname,String zipcode) {
-		
-		
-		Reporter.log("Harry", true);
+	public void VerifyPrd_1(String firstname, String lastname, String zipcode) {
+
+		// Create the Test Information
+		test = report.createTest("Verify Order Prd 1");
+
+		// Steps Inforamtion
+		test.log(Status.INFO, "Step1: Launching The Browser Sucessful");
+
+		test.log(Status.INFO, "Step2: Navigating To Application via URl Sucessful");
+
+		test.log(Status.PASS, "Step3: Verified the Webpage sucessful");
+
 		Reporter.log(firstname, true);
 		Reporter.log(lastname, true);
 		Reporter.log(zipcode, true);
-		
+
 		// Step 1: Object Creation for POM Classes
 		HomePage hp = new HomePage(driver);
 		CartPage cp = new CartPage(driver);
@@ -30,10 +41,18 @@ public class TeamATest extends BaseConfig {
 
 		// Step 2: Click on "Sauce Labs Fleece Jacket" in Product List Page (PLP)
 		Assert.assertTrue(hp.getfourthproduct().isDisplayed());
+		
+		if (hp.getfourthproduct().isDisplayed()) {
+			test.log(Status.PASS, "Step4: verified the FourthPrd is Displayed ");
+		} else {
+			test.log(Status.FAIL, "Step4: verified the WebElementis Not  Displayed ");
+		}
 		WebDriverLibrary.elementClick(hp.getfourthproduct());
 
-		// Step 3: Verify if "Sauce Labs Fleece Jacket" Product Details Page (PDP) is displayed
-		//Assert.assertEquals(driver.getCurrentUrl(), "https://www.saucedemo.com/inventory-item.html?id=5");
+		// Step 3: Verify if "Sauce Labs Fleece Jacket" Product Details Page (PDP) is
+		// displayed
+		// Assert.assertEquals(driver.getCurrentUrl(),
+		// "https://www.saucedemo.com/inventory-item.html?id=5");
 //
 //		// Step 4: Click on "Add To Cart" Button
 //		Assert.assertTrue(hp.getaddtocartbtn().isEnabled());
@@ -158,9 +177,29 @@ public class TeamATest extends BaseConfig {
 //		//Log
 		System.out.println("Products ordered succesfully");
 
-		}
-		
+	}
 
-	
+	@Test
+	public void VerifyPrd_2() {
+
+		// Create the Test Information
+		test = report.createTest("Verify Order Prd 2");
+
+		// Steps Inforamtion
+		test.log(Status.INFO, "Verify Order Prd 2");
+
+	}
+
+	@Test
+	public void VerifyPrd_3() {
+
+
+		// Create the Test Information
+		test = report.createTest("Verify Order Prd 3");
+
+		// Steps Inforamtion
+		test.log(Status.INFO, "Verify Order Prd 3");
+
+	}
 
 }

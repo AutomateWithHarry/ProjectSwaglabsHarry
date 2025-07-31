@@ -4,21 +4,61 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import pagerepository.LoginPage;
 import pagerepository.LogoutPage;
 
 public class BaseConfig {
 	public WebDriver driver;
+	public ExtentSparkReporter spark ;
+	public ExtentReports report;
+	public ExtentTest test;
 
- @Parameters("BrowserName")
+	@BeforeTest
+	public void ReportSetup() {
+		// Create the SparkReport
+		 spark = new ExtentSparkReporter("./AdvanceReports/report.html");
+
+		// Configure the SparkReport Information
+		spark.config().setDocumentTitle("Regresstion Testing For the SwagLabs");
+		spark.config().setReportName("RegresstionSuite");
+		spark.config().setTheme(Theme.STANDARD);
+
+		// Create the Extent Report
+		report = new ExtentReports();
+
+		// Attach the Spark Report and ExtentReport
+		report.attachReporter(spark);
+
+		// Configure the System Information in Extent Report
+		report.setSystemInfo("DeviceName:", "Harry");
+		report.setSystemInfo("OperatingSystem:", "WINDOWS 11");
+		report.setSystemInfo("Browser:", "Chrome");
+		report.setSystemInfo("BrowserVersion:", "chrome-138.0.7204.169 ");
+
+	}
+
+	@AfterTest
+	public void ReportTerminate() {
+
+		// Flush the Report Information
+		report.flush();
+	}
+
+	@Parameters("BrowserName")
 	@BeforeClass
 	public void browserSetup(String browser) {
-		
 
 		// Open the Browser
 		driver = WebDriverLibrary.openBrowser(browser);
@@ -81,15 +121,14 @@ public class BaseConfig {
 		WebDriverLibrary.elementClick(logoutobj.getLogoutmenu());
 
 		// Validate the Logoutlink
-		//Assert.assertTrue(logoutobj.getLogoutlink().isDisplayed());
+		// Assert.assertTrue(logoutobj.getLogoutlink().isDisplayed());
 
 		// click on logoutlink
-		WebDriverLibrary.elementClick_Actions(logoutobj.getLogoutlink());
+		WebDriverLibrary.elementClick(logoutobj.getLogoutlink());
 	}
 
 	@AfterClass
 	public void browserTerminate() {
-	
 
 		// Close the Browser
 		WebDriverLibrary.closeAllWindows();
@@ -104,7 +143,6 @@ public class BaseConfig {
 		data[0][0] = ExcelLibrary.readsingledata("CheckoutDetail", 1, 0);
 		data[0][1] = ExcelLibrary.readsingledata("CheckoutDetail", 1, 1);
 		data[0][2] = ExcelLibrary.readsingledata("CheckoutDetail", 1, 2);
-		
 
 		return data;
 	}
